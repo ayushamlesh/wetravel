@@ -269,23 +269,29 @@
       <a href="/booking" style="color:white;
       "><h4>Pack Your Bag </h4></a>
       </button>
+      <!--done js  -->
+      <button class="but2" id="SECOND" onmousedown="mouseDown()" onmouseup="mouseUp()" onmouseover="mhover()" style="color: white">
+        <h3>
+          <script>
+            const myDate = new Date();
+             document.write(myDate.getDate() + "/" + (myDate.getMonth() + 1) + "/" + myDate.getFullYear());
   
-      <button class="but2" id="SECOND" onmousedown="mouseDown()" onmouseup="mouseUp()" style="color: white">
-        <h3><!-- js date and time & chalk is used-->
-        <script>
-          const myDate = new Date();
-          document.write(myDate.getDate() + "/" + (myDate.getMonth() + 1) + "/" + myDate.getFullYear());
-    
           function mouseDown() {
-            document.getElementById("SECOND").style.color = "green";
-          }
+          document.getElementById("SECOND").style.color = "green";
+        }
+  
+        function mouseUp() {
+          document.getElementById("SECOND").style.color = "yellow";
+        }
+
+        function mhover() {
+          document.getElementById("SECOND").replaceWith(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds());
+        }
+       </script>
+        </h3>
+      </button>
+      
     
-          function mouseUp() {
-            document.getElementById("SECOND").style.color = "yellow";
-          }
-        </script>
-        <!--done js  -->
-      </h4></button>
   </div>
   <br><br>
   <br><br>

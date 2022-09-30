@@ -29,17 +29,17 @@ app.set('view engine', 'ejs');
 
 //mountain route
 app.get('/mountain', (req, res) => {
-    console.log("Mountain accessed");
+    console.log(chalk.blue("Mountain accessed"));
     res.render('mountain.ejs', { title: 'Mountain' });
 });
 
 app.get('/adventure', (req, res) => {
-    console.log("Adventure accessed");
+    console.log(chalk.bgGrey("Adventure accessed"));
     res.render('adventure.ejs', { title: 'Adventure' });
 });
 
 app.get('/beaches', (req, res) => {
-    console.log("Beaches accessed");
+    console.log(chalk.bgGreen.bold("Beaches accessed"));
     res.render('beaches.ejs', { title: 'Beaches' });
 });
 
@@ -49,7 +49,7 @@ app.get('/pilgrimage', (req, res) => {
 });
 //booking page
 app.get('/booking', (req, res) => {
-    console.log("Booking accessed");
+    console.log(chalk.bgGreenBright("Booking accessed"));
     res.render('booking.ejs', { title: 'Booking' });
 });
 
@@ -74,7 +74,7 @@ app.post('/booking', uncodedparser, [
         // creating a var to store error message and coming back to the registration page
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
-            console.log(errors);
+            console.log(chalk.bgRed(errors));
             res.render('booking.ejs', { title: 'TRY AGAIN' })
         }
         else {

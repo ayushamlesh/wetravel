@@ -1,0 +1,141 @@
+<!-- /create dynamic web pages with ejs -->
+<style>
+      .parallax {
+      /* The image used */
+      background-image: url(./img/home/IMG_20200802_095045.jpg);
+
+      /* Set a specific height */
+      min-height: 550px;
+      min-width: 50%;
+      float: right;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+</style>
+<%- include('header') -%>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/trail-walk-trekking-excursion.jpg" height="500" width="1300">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img/wp2174006-libya-wallpapers.jpg" width="1300" height="500">
+
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img/wp2215004-madagascar-country-wallpapers.png" height="500" width="1300">
+
+  </div>
+
+  <a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onClick="plusSlides(1)">&#10095;</a>
+
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onClick="currentSlide(1)"></span>
+    <span class="dot" onClick="currentSlide(2)"></span>
+    <span class="dot" onClick="currentSlide(3)"></span>
+  </div>
+  <script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
+  }
+  </script>
+  <hr size="5" height="5" color="#FFCC00"></hr>
+  
+  </hr>
+  <img src="img/home/stil-TVllFyGaLEA-unsplash.jpg" height="632" width="480" style="float:left; padding-left:90px; padding-right:100px">
+  <img src="img/home/PicsArt_07-25-12.54.08.jpg" height="632" width="350">
+  <h2 align="center">THE PEACE WE OFFER TO YOU</h2>
+  <hr align="center" width="500px">
+  <img src="img/home/eberhard-grossgasteiger-YV_gbygzlWk-unsplash.jpg" width="30%" style="margin:1.50%">
+  <img src="img/home/sourabh-agarwal-R-Zcte8oACo-unsplash.jpg" width="30%" style="margin:1.50%">
+  <img src="img/home/SAVE_20200725_125539.jpg" width="30%" style="margin:1.50%">
+  <img src="img/home/fezbot2000-xVXlEoQbKc4-unsplash.jpg" width="30%" style="margin:1.50%">
+  <img src="img/home/meric-dagli-e22GaIs1VuU-unsplash.jpg" width="30%" style="margin:1.50%">
+  <img src="img/home/rune-haugseng-qNe4XPYDnSY-unsplash.jpg" width="30%" style="margin:1.50%">
+
+  <div class="container1">
+    <img src="img/martin-jernberg-nE2gf1scItI-unsplash.jpg" width="100%">
+
+
+    <div class="c2">
+      <h1 style="color:#000;" align="center">INCREDEBLE INDIA !</h1>
+      <div style="color:#333; font-size:17px">
+        <p id="b">
+          Interesting and Intriguing, India offers incredible holiday experiences through its culture, topography, and wildlife diversity. With these amazing and unique experiences, this south Asian country conveniently finds its way into the world tourism map as one of the finest destinations for a holistic vacation.</p>
+
+        <p>India establishes its identity as the country of architectural masterpieces, making it an ideal travel destination to plan a heritage tour in the world. While Taj Mahal makes for the major draw on an India tour, there are a plethora of monuments and edifices in every India travel guide displaying the fine architecture and grandiose of different eras in the country.</p>
+      </div>
+      <div style="font-size:17px">
+        <p>The diverse Indian topography adorned with the impressive Himalayas; long stretches of coastline; expansive hot, cold and white salt deserts; dense forests; alpine meadows and lakes; and scenic waterfalls pique the tourists’ interest.</p>
+
+        <p>Along with the best nature sightseeing tours, India offers an opportunity to visitors to have a little adventure of their own. The numerous spell-binding and less-trodden trails give trekking tour opportunities in South Asia unlike any other.</p>
+
+        <p>India Tours offers a chance to explore its biodiversity in the country's many national parks and wildlife reserves. An enthralling experience entails in the India wildlife tour packages that take tourists to the habitats of Royal Bengal Tigers, one-horned rhinos, and snow leopards amongst many rare, endangered, and unique species of flora and fauna.</p>
+
+        <p>One of the oldest civilisations in the world, India is a mosaic of multicultural experiences. With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct geographical entity.</p>
+
+        <p style="color:#000">Fringed by the Great Himalayas in the north, it stretches southwards and at the Tropic of Cancer, tapers off into the Indian Ocean between the Bay of Bengal on the east and the Arabian Sea on the west. As you travel the expanse of the country, you are greeted by diverse nuances of cuisines, faiths, arts, crafts, music, nature, lands, tribes, history and adventure sports. India has a mesmeric conflation of the old and the new. As the bustling old bazaars rub shoulders with swanky shopping malls, and majestic monuments accompany luxurious heritage hotels, the quintessential traveller can get the best of both worlds. Head to the mountains, enjoy a beach retreat or cruise through the golden Thar, India has options galore for all.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h2 align="center">WELCOME TO DIVINE INDIAN CULTURE</h2>
+  <div class="parallax"></div>
+  <div style="margin:50px; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">
+    <p id="p">The culture of India refers collectively to the thousands of distinct and unique cultures of all religions and communities present in India. India's languages, religions, dance, music, architecture, food and customs differ from place to place within the country. Indian culture, often labeled as an amalgamation of several cultures, spans across the Indian subcontinent and has been influenced by a history that is several millennia old. Many elements of India's diverse cultures, such as Indian religions, philosophy, cuisine, languages, dance, music and movies have a profound impact across the Indosphere, Greater India and the world.</p>
+
+    <p id="p">
+      India has 28 states with different culture and the second most populated country in the world. The Indian culture, spans across the Indian subcontinent and has been influenced and shaped by a history that is several thousand years old. Throughout the history of India, Indian culture has been heavily influenced by Dharmic religions. They have been credited with shaping much of Indian philosophy, literature, architecture, art and music. Greater India was the historical extent of Indian culture beyond the Indian subcontinent. This particularly concerns the spread of Hinduism, Buddhism, architecture, administration and writing system from India to other parts of Asia through the Silk Road by the travelers and maritime traders during the early centuries of the Common Era. To the west, Greater India overlaps with Greater Persia in the Hindu Kush and Pamir Mountains. Over the centuries, there has been a significant fusion of cultures between Buddhists, Hindus, Muslims, Jains, Sikhs and various tribal populations in India</p>
+  </div>
+  <hr>
+  <h2 align="center">PLATABLE INDIAN FOOD CULTURE</h2>
+  <img src="img/home/shreyak-singh-gFB1IPmH6RE-unsplash.jpg" width="20%" style="margin:2%">
+  <img src="img/home/tiago-rosado-Xl8vnC9U4EE-unsplash.jpg" width="20%" style="margin:2%">
+  <img src="img/home/saundarya-srinivasan-9CFwOcFCcDI-unsplash.jpg" width="20%" style="margin:2%">
+  <img src="img/home/shreyak-singh-0j4bisyPo3M-unsplash.jpg" width="20%" style="margin:2%">
+  <img src="img/home/andy-holmes-mTqGgeYkfaY-unsplash.jpg" height="500" width="500" style="margin-left:100px; margin-right:100px; float:left">
+  <div style="margin-right:100px; font-family:'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-style:italic; font-size:18px; margin-bottom:100px">
+    <p>Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent.
+       Given the diversity in soil, climate, culture, ethnic groups, and occupations, 
+       these cuisines vary substantially and use locally available spices, herbs, vegetables,
+      and fruits. Indian food is also heavily influenced by religion,
+      in particular Hinduism, cultural choices and traditions.
+      The cuisine is also influenced by centuries of Islamic rule,
+       particularly the Mughal rule. Samosas and pilafs are examples.</p>
+
+    <p>Historical events such as invasions, trade relations, and colonialism have played
+       a role in introducing certain foods to this country. The Columbian discovery of the
+        New World brought a number of new vegetables and fruit to India.
+         A number of these such as the potato, tomatoes, chillies, peanuts,
+          and Guava have become staples in many regions of India. Indian cuisine 
+          has shaped the history of international relations; the spice trade between 
+          India and Europe was the primary catalyst for Europe's Age of Discovery. 
+          Spices were bought from India and traded around Europe and Asia. Indian cuisine 
+          has influenced other cuisines across the world, especially those from Europe 
+          (especially Britain), the Middle East, Southern African, East Africa,
+           Southeast Asia, North America, Mauritius, Fiji, Oceania, and the Caribbean.</p>
+  </div>
+  <hr>
+  <%- include('footer')-%>

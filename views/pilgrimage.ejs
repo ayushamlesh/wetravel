@@ -1,0 +1,377 @@
+<style>
+input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color:#06C;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color:#F00;
+}
+.cont {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#999;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+div.polaroid {
+  width: 40%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin-left: 100px;
+  float:left;
+  height:70%;
+}
+
+div.conte {
+  text-align: center;
+  padding: 10px 10px;
+}
+.con {
+  position: relative;
+  width:40%;
+  padding-left:100px;
+  float:left;
+  padding-right:50px;
+  padding-bottom:15px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.con:hover .image {
+  opacity: 0.3;
+}
+
+.con:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color:#F60;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.con2 {
+  position: relative;
+  width:40%;
+  padding-left:100px;
+  float:right;
+  padding-right:50px;
+}
+.con2:hover .image {
+  opacity: 0.3;
+}
+
+.con2:hover .middle {
+  opacity: 1;
+}
+.parlax {
+  /* The image used */
+  background-image:url(img/pilgrimage/kedarnath.jpg);
+
+  /* Set a specific height */
+  min-height:500px;
+  min-width:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<%- include('header') -%>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img/pilgrimage/jyotirmoy-gupta-FtpedGoq6tA-unsplash.jpg" height="500" width="1300">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img/pilgrimage/shiv-prasad-OPWM488DfeQ-unsplash.jpg" width="1300" height="500">
+ 
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+<img src="img/pilgrimage/ashwini-chaudhary-OvwXZvQculI-unsplash.jpg" height="500" width="1300">
+ 
+</div>
+
+<a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+<a class="next" onClick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onClick="currentSlide(1)"></span> 
+  <span class="dot" onClick="currentSlide(2)"></span> 
+  <span class="dot" onClick="currentSlide(3)"></span> 
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000);
+}
+</script>
+<hr size="5" height="5" color="#FFCC00"></hr>
+
+<div style="float:right" >
+<h2><img src="img/pilgrimage/ashwini-chaudhary-0XNU5B9zwYY-unsplash.jpg" height="559" width="493" style="margin-left:25px; float:left; margin-right:15px; margin-bottom:15px">
+तीर्थ यात्रा</h2>
+<p id="p">एक तीर्थ यात्रा एक यात्रा है, अक्सर एक अज्ञात या विदेशी स्थान में, जहां एक व्यक्ति अनुभव के माध्यम से अपने स्वयं, दूसरों, प्रकृति या उच्चतर अच्छे के बारे में नए या विस्तारित अर्थ की तलाश में जाता है।  यह एक व्यक्तिगत परिवर्तन का कारण बन सकता है, जिसके बाद तीर्थयात्री अपने दैनिक जीवन में लौट आते हैं</p>
+<p id="p">तीर्थयात्राओं में अक्सर नैतिक या आध्यात्मिक महत्व की यात्रा या खोज शामिल होती है।  आमतौर पर, यह किसी व्यक्ति के विश्वासों और विश्वास के लिए एक तीर्थ या अन्य महत्वपूर्ण स्थान की यात्रा है, हालांकि कभी-कभी यह किसी की अपनी मान्यताओं में एक रूपक यात्रा हो सकती है।</p>
+<p id="p">
+अधिकांश हिंदू तीर्थस्थल विभिन्न देवताओं के जीवन से पौराणिक घटनाओं से जुड़े हैं ,
+ लगभग कोई भी स्थान तीर्थ यात्रा के लिए एक केंद्र बन सकता है, लेकिन ज्यादातर मामलों में वे पवित्र शहर, नदियाँ, झीलें और पहाड़ हैं।  हिंदुओं को अपने जीवनकाल के दौरान तीर्थयात्रा करने के लिए प्रोत्साहित किया जाता है, हालांकि इस अभ्यास को बिल्कुल अनिवार्य नहीं माना जाता है। अधिकांश हिंदू अपने क्षेत्र या स्थान के भीतर साइटों पर जाते हैं।</p>
+ </div>
+ 
+<h2 align="center">TUNGNATH</h2>
+<div class="parallax"></div>
+
+<p id="p">Tungnath is one of the highest Shiva temples in the world and is the highest of the five Panch Kedar temples located in the mountain range of Tunganath in Rudraprayag district, in the Indian state of Uttarakhand. The Tunganath (literal meaning: Lord of the peaks) mountains form the Mandakini and Alaknanda river valleys. It is located at an altitude of 3,680 m (12,073 ft), and just below the peak of Chandrashila. and is the third (Tritiya Kedar) in the pecking order of the Panch Kedars. It has a rich legend linked to the Pandavas, heroes of the Mahabharata epic</p>
+<p id="p">
+The priest at this temple is a local Brahmin from Makku village, unlike the other Kedar temples where the priests are from South India, a tradition set by the eighth century Hindu seer Sankaracharya. It is also said that the Maithani Brahmins officiate as priests at this temple. During the winter season, the temple is closed and the symbolic image of the deity and the temple priests are moved to Makkumath, which is 29km from here. It is near Duggalbitha 10 km (6 mi) before Chopta towards Ukhimath.</p>
+
+<hr color="#FFCC00"></hr>
+<table border="3" width="100%" bgcolor="#00CCFF" id="af">
+<tr>
+<th colspan="2">TUNGNATH DOCUMENTATION</th>
+</tr>
+<tr>
+<td>Affliation</td>
+<td>Hinduism</td>
+</tr>
+<tr>
+<td>District</td>
+<td>Rudraprayag</td>
+</tr> 
+<tr>
+<td>Type</td>
+<td>North Indian Architecture</td>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>3,680m | 12,073ft</td>
+</tr>
+</table>
+
+<div class="container">
+<img src="img/pilgrimage/ravi-n-jha-aU9yXmIwfkw-unsplash.jpg" height="811" width="100%" >
+<div class="content">
+<h2>GOLDEN TEMPLE</h2>
+<table align="right" bgcolor="#FFFFFF" border="3" height="60%" width="40%">
+<tr>
+<th colspan="2">GOLDEN TEMPLE</th>
+</tr>
+<tr>
+<td>Affliation</td>
+<td>Sikhism</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Punjab</td>
+</tr>
+<tr>
+<td>Groundbreaking</td>
+<td>December 1581</td>
+</tr>
+<tr>
+<td>Completed</td>
+<td>1589 temple | 1604 Adi Granth</td>
+</tr>
+</table>
+<p id="b">The Gurdwara is built around a man-made pool (sarovar) that was completed by the fourth Sikh Guru, Guru Ram Das in 1577. Guru Arjan, the fifth Guru of Sikhism, requested Sai Mir Mian Mohammed, a Muslim Pir of Lahore, to lay its foundation stone in 1589. In 1604, Guru Arjan placed a copy of the Adi Granth in Harmandir Sahib, calling the site Ath Sath Tirath (lit. "shrine of 68 pilgrimages"). The Gurdwara was repeatedly rebuilt by the Sikhs after it became a target of persecution and was destroyed several times by the Mughal and invading Afghan armies. Maharaja Ranjit Singh after founding the Sikh Empire, rebuilt it in marble and copper in 1809, overlaid the sanctum with gold foil in 1830. This has led to the name the Golden Temple.
+The Harmandir Sahib is an open house of worship for all men and women, from all walks of life and faith. It has a square plan with four entrances, has a circumambulation path around the pool. Over 100,000 people visit the holy shrine daily for worship. The Gurdwara complex has been nominated as a UNESCO World Heritage Site, and its application is pending on the tentative list of UNESCO.</p>
+
+</div>
+</div>
+
+<h2 align="center">SPIRITUAL</h2>
+<div class="polaroid">
+  <img src="img/pilgrimage/kashi vishwanath mandir Varanasi.jpg" height="370" style="width:100%" >
+  <div class="conte">
+  <h4>KASHI VISHWANATH</h4>
+  <p>Kashi Vishwanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva. It is located in Varanasi, Uttar Pradesh, India. The Temple stands on the western bank of the holy river Ganga, and is one of the twelve Jyotirlingas, the holiest of Shiva Temples. The main deity is known by the names Shri Vishwanath and Vishweshwara.</p>
+  </div>
+</div>
+<div class="polaroid">
+  <img src="img/pilgrimage/menak.jpg" alt="Norther Lights" height="370" style="width:100%">
+  <div class="conte">
+    <h4>MINAKSHI TEMPLE</h4>
+    <p>Meenakshi Temple is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to Meenakshi, a form of Parvati, and her consort, Sundareshwar, a form of Shiva. The temple is at the center of the ancient temple city of Madurai mentioned in the Tamil Sangam literature, with the goddess temple mentioned in 6th century CE texts.</p>
+  </div>
+</div>
+<div class="cont">
+  <form >
+    <input type="text" id="fname" name="firstname" placeholder="comments..">
+
+    <input type="submit" value="Submit">
+  </form>
+  <h4>user1</h4>
+ <p style="border:thin">this is the comment</p>
+ <a href="comments.html"<button class="button" style="vertical-align:middle"><span>More.. </span></button></a>
+  </div>
+
+
+<hr align="center" width="40%" color="#666666" height="5px" style="padding:5px">
+
+<div class="con">
+  <img src="img/pilgrimage/PD0940.jpg" height="356" width="600" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">RAMESHWARAM</div>
+  </div>
+</div>
+  <p id="p" style="padding-bottom:200px">Rameshwaram Temple is a Hindu temple dedicated to the god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is also one of the twelve Jyotirlinga temples. The temple was expanded during the 12th century by Pandya Dynasty, The temple has the longest corridor among all Hindu temples in India. The temple is located in Rameswaram considered a holy pilgrimage site for Shaivites, Vaishnavites and Smarthas. The presiding deity, the Lingam of Ramanathaswamy (Shiva), is believed to have been established and worshiped by Rama.</p>
+<hr align="center" width="40%" color="#666666" height="5px" style="padding:5px">
+<div class="con2">
+  <img src="img/pilgrimage/76256638.jpg" height="356" width="600" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">TIRUPATI BALAJI TEMPLE</div>
+  </div>
+</div>
+  <p id="p" style="padding-bottom:250px">Tirupati Balaji is a Hindu temple situated in the hill town of Tirumala at Tirupati in Chittoor district of Andhra Pradesh, India. The Temple is dedicated to Venkateswara, a form of Vishnu, who is believed to have appeared here to save mankind from trials and troubles of Kali Yuga.
+Tirumala Hills are part of Seshachalam Hills range. The hills are 853 metres (2,799 ft) above sea level. The Hills comprises seven peaks, representing the seven heads of Adisesha. The temple lies on the seventh peak -Venkatadri, on the southern banks of Sri Swami Pushkarini, a holy water tank. Hence the temple is also referred to as "Temple of Seven Hills". Tirumala town covers about 10.33 sq mi (26.75 km2) in area. </p>
+ 
+ <hr align="center" width="50%">
+
+<h2 align="center">KEDARNATH</h2>
+<div class="parlax"></div>
+
+<p id="p">Kēdārnāth Mandir (Kedarnath Temple) is a Hindu temple (shrine) dedicated to Lord Shiva (Mahadeva). Located on the Garhwal Himalayan range near the Mandakini river, Kedarnath is located in the state of Uttarakhand, India. Due to extreme weather conditions, the temple is open to the general public only between the months of April (Akshaya Tritiya) and November (Kartik Purnima). During the winters, the vigraha (deity) from Kedarnath temple is carried down to Ukhimath and where the deity is worshiped for the next six months. Kedarnath is seen as a homogenous form of Lord Shiva, the 'Lord of Kedarkhand', the historical name of the region. </p>
+<p id="p">
+The priest at this temple is a local Brahmin from Makku village, unlike the other Kedar temples where the priests are from South India, a tradition set by the eighth century Hindu seer Sankaracharya. It is also said that the Maithani Brahmins officiate as priests at this temple. During the winter season, the temple is closed and the symbolic image of the deity and the temple priests are moved to Makkumath, which is 29km from here. It is near Duggalbitha 10 km (6 mi) before Chopta towards Ukhimath.</p>
+
+<hr color="#FFCC00"></hr>
+<table border="3" width="100%" bgcolor="#00CCFF" id="af">
+<tr>
+<th colspan="2">TUNGNATH DOCUMENTATION</th>
+</tr>
+<tr>
+<td>Affliation</td>
+<td>Hinduism</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Utrakhand</td>
+</tr> 
+<tr>
+<td>Type</td>
+<td>North Indian Architecture</td>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>3,583m | 11,755ft</td>
+</tr>
+</table>
+<div class="polaroid">
+  <img src="img/pilgrimage/kashi vishwanath mandir Varanasi.jpg" height="370" style="width:100%" >
+  <div class="conte">
+  <h4>KASHI VISHWANATH</h4>
+  <p>Kashi Vishwanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva. It is located in Varanasi, Uttar Pradesh, India. The Temple stands on the western bank of the holy river Ganga, and is one of the twelve Jyotirlingas, the holiest of Shiva Temples. The main deity is known by the names Shri Vishwanath and Vishweshwara.</p>
+  </div>
+</div>
+<div class="polaroid">
+  <img src="img/pilgrimage/menak.jpg" alt="Norther Lights" height="370" style="width:100%">
+  <div class="conte">
+    <h4>MINAKSHI TEMPLE</h4>
+    <p>Meenakshi Temple is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to Meenakshi, a form of Parvati, and her consort, Sundareshwar, a form of Shiva. The temple is at the center of the ancient temple city of Madurai mentioned in the Tamil Sangam literature, with the goddess temple mentioned in 6th century CE texts.</p>
+  </div>
+</div>
+<div class="cont">
+  <form >
+    <input type="text" id="fname" name="firstname" placeholder="comments..">
+
+    <input type="submit" value="Submit">
+  </form>
+  <h4>user1</h4>
+ <p style="border:thin">this is the comment</p>
+ <a href="comments.html"<button class="button" style="vertical-align:middle"><span>More.. </span></button></a>
+  </div>
+  <%- include('footer')-%>

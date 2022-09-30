@@ -1,0 +1,226 @@
+<style>
+.parlax {
+  /* The image used */
+  background-image:url(./img/mountain/Shivalik-Hills.jpg);
+
+  /* Set a specific height */
+  min-height:500px;
+  min-width:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<%- include('header') -%>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img/pilgrimage/jyotirmoy-gupta-FtpedGoq6tA-unsplash.jpg" height="500" width="1300">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img/pilgrimage/shiv-prasad-OPWM488DfeQ-unsplash.jpg" width="1300" height="500">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+<img src="img/mountain/Anamalai-Hills.jpg" height="500" width="1300">
+
+</div>
+
+<a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+<a class="next" onClick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onClick="currentSlide(1)"></span>
+  <span class="dot" onClick="currentSlide(2)"></span>
+  <span class="dot" onClick="currentSlide(3)"></span>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000);
+}
+</script>
+<hr size="5" height="5" color="#FFCC00"></hr>
+
+<div style="float:right" >
+<h2><img src="img/mountain/Biligiriranga-hills.jpg" height="559" width="493"style="margin-left:25px; float:left; margin-right:15px; margin-bottom:15px"></h2>
+<p id="p"></p>
+<p id="p">The Biligirirangana Hills, commonly called BR Hills, is a hill range situated in south-eastern Karnataka, at its border with Tamil Nadu (Erode District) in South India. The area is called Biligiriranganatha Swamy Temple Wildlife Sanctuary or simply BRT Wildlife Sanctuary. It is a protected reserve under the Wildlife Protection Act of 1972. Being at the starting point of the Eastern Ghats and very close to Western Ghats, the sanctuary is home to eco-systems that are unique to both the mountain ranges. The site was declared a tiger reserve in January 2011 by the Karnataka government, a few months after approval from India's National Tiger Conservation Authority</p>
+<p id="p">
+ </div>
+
+<h2 align="center">ANAMALAI-Hills</h2>
+<div class="parallax"></div>
+
+<p id="p">The Anaimalai or Anamala Hills, also known as the Elephant Mountains, are the range of mountains that form the southern portion of the Western Ghats and span the border of Tamil Nadu and Kerala in Southern India. The name anamala is derived from the Tamil/Malayalam word anai or ana, meaning elephant,[3] and malai or mala, meaning hill – thus Elephant Hill.
+
+Anamudi Peak (8,842 feet [2,695 metres]) lies at the extreme southwestern end of the range and is the highest peak in southern India. Palakkad Gap divides the Western Ghats to the north. The lower slopes of the hills now have coffee and tea plantations as well as teak forests of great economic value. Dense monsoon forests including rosewood, sandalwood, teak, and sago palms cover most of the region, which helps the coffee and tea plantations and teak plantations grow.</p>
+<p id="p">
+</p>
+
+<hr color="#FFCC00"></hr>
+<table border="3" width="100%" bgcolor="#00CCFF" id="af">
+<tr>
+<th colspan="2">ANAMALAI Hills DOCUMENTATION</th>
+</tr>
+<tr>
+<td>Affliation</td>
+<td>hindusim</td>
+</tr>
+<tr>
+<td>District</td>
+<td>Tamilnadu</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Southern Indian </td>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>2,695m | 8,842ft</td>
+</tr>
+</table>
+
+<div class="container">
+<img src="img/mountain/kangchenjunga mountain.jpg" height="811" width="100%" >
+<div class="content">
+<h2>kangchenjunga Mountain</h2>
+<table align="right" bgcolor="#FFFFFF" border="3" height="60%" width="40%">
+<tr>
+<th colspan="2">kangchenjunga Mountain</th>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>8,56m | 28,169 ft Ranked 3rd</td>
+</tr>
+<tr>
+<td>prominence</td>
+<td>3,922m | 12,867 ft Ranked 29th </td>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>28,169ft | 8,586mt</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>124 km | 77mi</td>
+</tr>
+</table>
+<p id="b">Kangchenjunga, also spelled Kanchenjunga, is the third highest mountain in the world. It rises with an elevation of 8,586 m (28,169 ft) in a section of the Himalayas called Kangchenjunga Himal delimited in the west by the Tamur River, in the north by the Lhonak Chu and Jongsang La, and in the east by the Teesta River. It lies between Nepal and Sikkim, India, with three of the five peaks (Main, Central, and South) directly on the border,and the remaining two (West and Kangbachen) in Nepal's Taplejung District.
+
+Until 1852, Kangchenjunga was assumed to be the highest mountain in the world, but calculations based on various readings and measurements made by the Great Trigonometrical Survey of India in 1849 came to the conclusion that Mount Everest, known as Peak XV at the time, was the highest. Allowing for further verification of all calculations, it was officially announced in 1856 that Kangchenjunga is the third highest mountain in the world</p>
+
+</div>
+</div>
+
+<h2 align="center">KASHI Hills</h2>
+<div class="polaroid">
+  <img src="img/mountain/Khasi-Hills.jpg" height="370" style="width:100%" >
+  <div class="conte">
+  <h4>KASHI Hills</h4>
+  <p>The Khasi hills were divided into the East Khasi Hills and West Khasi Hills in 1976, with the Ri-Bhoi and South West Khasi Hills Districts being formed afterwards. The picturesque capital of Meghalaya, Shillong, is the district headquarters of the East Khasi Hills district, and the most developed town of the region. The Khasi Hills are a great convergence of lush forests, endless verdant grasslands, majestic hills surrounded by playful clouds, waterfalls and rivers flowing through the creeks, and ancient monoliths loaded with mystical caves. Complemented with the abundance of diverse wildlife seen throughout the area, the Khasi Hills region is world-famous for being a prime ecological hotspot.</p>
+  </div>
+</div>
+<div class="polaroid">
+  <img src="img/mountain/Lushai-Hills.jpg" height="370" style="width:100%">
+  <div class="conte">
+    <h4>LUSHAI Hills</h4>
+    <p>The Lushai (Pron: ˌlʊˈʃaɪ) Hills (or Mizo Hills) are a mountain range in Mizoram and Tripura, India.[1] The range is part of the Patkai range system and its highest point is 2,157 m high Phawngpui, also known as 'Blue Mountain'.</p>
+  </div>
+</div>
+<div class="cont">
+  <form >
+    <input type="text" id="fname" name="firstname" placeholder="comments..">
+    <input type="submit" value="Submit">
+  </form>
+  <h4>user1</h4>
+ <p style="border:thin">this is the comment</p>
+ <a href="comments.html"<button class="button" style="vertical-align:middle"><span>More.. </span></button></a>
+  </div>
+
+
+<hr align="center" width="40%" color="#666666" height="5px" style="padding:5px">
+
+<div class="con">
+  <img src="img/mountain/Nilgiri-hills.jpg" height="356" width="600" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">NILGIRI Hills</div>
+  </div>
+</div>
+  <p id="p" style="padding-bottom:200px">Nilgiri Hills, mountainous region of Tamil Nadu state, southeastern India. The peaks of the Nilgiri rise abruptly from the surrounding plains to an elevation of about 6,000 to 8,000 feet (1,800 to 2,400 metres); one of them, Doda Betta (8,652 feet [2,637 metres]), is the highest point in Tamil Nadu. Part of the Western Ghats, the hills are separated from the Karnataka Plateau (north) by the Noyar River and from the Anaimalai and Palni hills (south) by the Palghat Gap. They are considerably cooler and wetter than the surrounding plains, the upper hills forming undulating grassy downs. Tea, cinchona (whose bark yields quinine), coffee, and vegetables are grown extensively.</p>
+<hr align="center" width="40%" color="#666666" height="5px" style="padding:5px">
+<div class="con2">
+  <img src="img/mountain/Palani-hills.jpg" height="356" width="600" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">PALANI Hills</div>
+  </div>
+</div>
+  <p id="p" style="padding-bottom:250px">The Palani Hills (Tamil:பழநி மலை) are a mountain range in the southern Indian states of Kerala and Tamil Nadu. The Palani Hills are an eastward extension of the Western Ghats ranges, which run parallel to the west coast of India. The Palani Hills adjoin the high Anamalai range (Kerala) on the west, and extend east into the plains of Tamil Nadu, covering an area of 2,068 square kilometres (798 sq mi). The highest part of the range is in the southwest, and reaches 1,800-2,500 metres (5,906-8,202 feet) elevation; the eastern extension of the range is made up of hills 1,000-1,500 m (3,281-4,921 ft) high.
+
+It is also home to the main temple of Lord Muruga, who is worshipped as the primary god in Tamil Nadu. </p>
+
+ <hr align="center" width="50%">
+
+<h2 align="center">SHIVALIK Hills</h2>
+<div class="parlax"></div>
+
+<p id="p">The Sivalik Hills, also known as Churia Hills, are a mountain range of the outer Himalayas that stretches from the Indus River about 2,400 km (1,500 mi) eastwards close to the Brahmaputra River, spanning across the northern parts of the Indian subcontinent. It is 10–50 km (6.2–31.1 mi) wide with an average elevation of 1,500–2,000 m (4,900–6,600 ft). Between the Teesta and Raidāk Rivers in Assam is a gap of about 90 km (56 mi). In some Sanskrit texts, the region is called Manak Parbat. Sivalik literally means 'tresses of Shiva’. Sivalik region is home to the Soanian archaeological culture.</P>
+<p id="p">
+Geologically, the Sivalik Hills belong to the Tertiary deposits of the outer Himalayas. They are chiefly composed of sandstone and conglomerate rock formations, which are the solidified detritus of the Himalayas[4] to their north; they are poorly consolidated. The remnant magnetisation of siltstones and sandstones indicates that they were deposited 16–5.2 million years ago. In Nepal, the Karnali River exposes the oldest part of the Shivalik Hills</p>
+
+<hr color="#FFCC00"></hr>
+<table border="3" width="100%" bgcolor="#00CCFF" id="af">
+<tr>
+<th colspan="2">SHIVALIK Hills</th>
+</tr>
+<tr>
+<td>State</td>
+<td>Utrakhand</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>North Indian Architecture</td>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>3,583m | 11,755ft</td>
+</tr>
+</table>
+
+
+<div class="cont">
+  <form >
+    <input type="text" id="fname" name="firstname" placeholder="comments..">
+
+    <input type="submit" value="Submit">
+  </form>
+  <h4>user1</h4>
+ <p style="border:thin">this is the comment</p>
+ <a href="comments.html"<button class="button" style="vertical-align:middle"><span>More.. </span></button></a>
+  </div>
+
+
+
+<%- include('footer')-%>

@@ -1,0 +1,432 @@
+<?php 
+session_start();
+if(empty($_SESSION['id'])){
+  header('location: Registration.php');
+}
+
+?>
+
+<html>
+<head>
+<title>Adventure</title>
+<style>
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1300px;
+  position: relative;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+#p{
+	font-size:18px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-style:italic;
+	margin-left:80px;
+	margin-right:80px
+}
+.parallax {
+  /* The image used */
+  background-image:url(img/adventure/river%20rafting/Kundalika-River-Maharashtra.jpg);
+
+  /* Set a specific height */
+  min-height:500px;
+  min-width:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#af {
+  font-family:"MS Serif", "New York", serif, Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+
+}
+
+#af td, #navy th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#af tr:nth-child(even){background-color: #f2f2f2;}
+
+#af tr:hover {background-color: #ddd;}
+
+#af th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#000;
+  color: white;
+}
+.container {
+  position: relative;
+  max-width:100%;
+  margin: 0 auto;
+}
+
+.container img {vertical-align:baseline;}
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: auto;
+  padding: 20px;
+}
+
+input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color:#06C;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color:#F00;
+}
+.cont {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#999;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+div.polaroid {
+  width: 40%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin-left: 100px;
+  float:left;
+  height:70%;
+}
+
+div.conte {
+  text-align: center;
+  padding: 10px 10px;
+}
+.con {
+  position: relative;
+  width:40%;
+  padding-left:100px;
+  float:left;
+  padding-right:50px;
+  padding-bottom:15px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: .5s ease;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.con:hover .image {
+  opacity: 0.3;
+}
+
+.con:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color:#F60;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.con2 {
+  position: relative;
+  width:40%;
+  padding-left:100px;
+  float:right;
+  padding-right:50px;
+}
+.con2:hover .image {
+  opacity: 0.3;
+}
+
+.con2:hover .middle {
+  opacity: 1;
+}
+.parlax {
+  /* The image used */
+  background-image:url(./img/adventure/river%20rafting/Kundalika-River-Maharashtra.jpg);
+
+  /* Set a specific height */
+  min-height:500px;
+  min-width:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<%-include('header')-%>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img/adventure/adventure.jpg" height="500" width="1300">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img/adventure/ARDAYINI WATERFALL.jpg" width="1300" height="500">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+<img src="img/adventure/Scuba-Diving-in-Lakshadweep.jpg" height="500" width="1300">
+
+</div>
+
+<a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+<a class="next" onClick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onClick="currentSlide(1)"></span>
+  <span class="dot" onClick="currentSlide(2)"></span>
+  <span class="dot" onClick="currentSlide(3)"></span>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000);
+}
+</script>
+<hr size="5" height="5" color="#FFCC00"></hr>
+
+
+<div style="float:right" >
+<h2><img src="img/adventure/adventure.jpg" height="559" width="493" style="margin-left:25px; float:left; margin-right:15px; margin-bottom:15px">
+Adventure</h2>
+<p id="p">A world which is sure to excite you and bring out the
+travelers passion in you. We are die hard travelers and
+explorers with the sole aim of converting the non believer
+and initiate them into the amazing and exciting world of
+adventure sports. Mother nature has been kind in allowing
+us to explore and admire her pristine natural beauty and we
+in return have dedicated yourselves to show it to all her
+admirers. We as a team promise to make your journey a
+experience which you would not forget in a hurry. We pride
+ourselves in providing the ultimate sweet spots which are off
+the beaten track.</p>
+ </div>
+
+<h2 align="center">RIVER RAFTING</h2>
+<div class="parallax"></div>
+
+<p id="p">Rafting and white water rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk and the need for teamwork is often a part of the experience.</p>
+<p id="p">Rafting on certain sections of rivers is considered an extreme sport and can be fatal, while other sections are not so extreme or difficult. Rafting is also a competitive sport practiced around the world which culminates in a world rafting championship event between the participating nations. The International Rafting Federation, often referred to as the IRF, is the worldwide body which oversees all aspects of the sport.</p>
+
+<hr color="#FFCC00"></hr>
+<table border="3" width="100%" bgcolor="#00CCFF" id="af">
+<tr>
+<th colspan="2">RIVER RAFTING</th>
+</tr>
+<tr>
+<td>LOCATION</td>
+<td>Maharastra,India</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>Elevation</td>
+<td>0 m| 0 ftft</td>
+</tr>
+</table>
+
+<div class="container">
+<img src="img/adventure/buji jumping/Arambol-Beach-in-Goa.jpg" height="811" width="100%" >
+<div class="content">
+<h2></h2>
+<table align="right" bgcolor="#FFFFFF" border="3" height="60%" width="40%">
+<tr>
+<th colspan="2">ARAMBOL BEECH</th>
+</tr>
+<tr>
+<td>State</td>
+<td>Goa</td>
+</tr>
+<tr>
+<tr>
+</tr>
+</table>
+<p id="b"> Arambol beach is considered to be one of the most beautiful beaches in Goa, amongst many other popular locations including Vagator, Anjuna and Palolem. A short walk north off the main beach is a smaller beach with a "fresh water lake" close to the sea. The water here is a mixture of fresh water and sea water. The jungle valley, enclosed between low hills hide a spectacular banyan tree. </p>
+</div>
+</div>
+
+<h2 align="center">SKY DIVING</h2>
+<div class="polaroid">
+  <img src="img/adventure/skydiving/dessa- gujrat.jpg" height="370" style="width:100%" >
+  <div class="conte">
+  <h4>Dessa-Gujrat</h4>
+  <p>Tandem skydiving or tandem parachuting refers to a type of skydiving where a student skydiver is connected to an instructor via a harness. The instructor guides the student through the whole jump from exit through freefall, piloting the canopy, and landing. The student needs only minimal instruction before making a tandem jump with the instructor.</p>
+  </div>
+</div>
+<div class="polaroid">
+  <img src="img/adventure/gulmarg7.jpg" alt="Norther Lights" height="370" style="width:100%">
+  <div class="conte">
+    <h4>HILI SKING</h4>
+    <p>Heli Skiing is such an adventure in Himachal Pradesh where tourist can explore great heights and breathtaking glaciers. Manali is the matchless destination for all ski enthusiasts who want to explore the challenging topography and stunning beauty of repeated helicopter rides. The marvellous beauty of silvery peaks glittering under the sun and laden pines extends the fun of Heli -skiing at Himachal Pradesh.</p>
+  </div>
+</div>
+<div class="cont">
+  <form >
+    <input type="text" id="fname" name="firstname" placeholder="comments..">
+
+    <input type="submit" value="Submit">
+  </form>
+  <h4>user1</h4>
+ <p style="border:thin">this is the comment</p>
+ <a href="comments.html"<button class="button" style="vertical-align:middle"><span>More.. </span></button></a>
+  </div>
+
+
+<hr align="center" width="40%" color="#666666" height="5px" style="padding:5px">
+
+<div class="con">
+  <img src="img/adventure/Scuba-Diving-in-Lakshadweep.jpg" height="356" width="600" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">Suba Diving</div>
+  </div>
+</div>
+  <p id="p" style="padding-bottom:200px">Scuba diving is a mode of underwater diving where the diver uses a self-contained underwater breathing apparatus (scuba), which is completely independent of surface supply, to breathe underwater.[1] Scuba divers carry their own source of breathing gas, usually compressed air,[2] allowing them greater independence and freedom of movement than surface-supplied divers, and longer underwater endurance than breath-hold divers.[1] Although the use of compressed air is common, a mixture of air and oxygen called enriched air or nitrox has become popular due to its benefit of reduced nitrogen intake during long or repetitive dives. Open circuit scuba systems discharge the breathing gas into the environment as it is exhaled, and consist of one or more diving cylinders containing breathing gas at high pressure which is supplied to the diver through a regulator. They may include additional cylinders for range extension, decompression gas or emergency breathing gas.Closed-circuit or semi-closed circuit rebreather scuba systems allow recycling of exhaled gases.</p>
+<br>
+<%- include('footer')-%>

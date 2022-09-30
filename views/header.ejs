@@ -1,0 +1,302 @@
+<html>
+<head>
+  <title><%=title%></title>
+
+  <style>
+    .but2 {
+      background-color: #2A265F;
+      text-decoration-color: #fff;
+      font-size: 7px;
+      padding: 10px 20px;
+      position: absolute;
+      top: 13px;
+      right: 5px;
+      letter-spacing: 1px;
+      border: 0;
+      border-radius: 90px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+
+
+    }
+
+    .but2:hover {
+      background-color: red;
+    }
+
+
+    .but2 span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .but2 span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .but2:hover span {
+      padding-right: 25px;
+    }
+
+    .but2:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .but {
+      background-color: #2A265F;
+      text-decoration-color: #fff;
+      font-size: 7px;
+      padding: 10px 20px;
+      position: absolute;
+      top: 13px;
+      right: 99px;
+      letter-spacing: 1px;
+      border: 0;
+      border-radius: 90px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+
+
+    }
+
+    .but:hover {
+      background-color: green;
+    }
+
+
+    .but span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .but span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .but:hover span {
+      padding-right: 25px;
+    }
+
+    .but:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000
+    }
+
+    #li {
+      float: left;
+    }
+
+    #li a {
+      display: block;
+      color: #FFF;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    #li a:hover:not(.active) {
+      background-color: #666;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1300px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+
+    .container1 {
+      position: relative;
+      text-align: justify;
+      margin: auto;
+      color: #FFF;
+      padding-bottom: 5px;
+    }
+
+    .c2 {
+      position: absolute;
+      top: 3%;
+      right: 0%;
+      left: 1%;
+      margin-right: 1%;
+    }
+
+
+
+    .footer {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+    .footer>div{
+      background-color: #000;
+      float:left;
+      width:33%;
+      height: 150px;
+    }
+  </style>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body class="body">
+  <div>
+    <img src="./HatchfulExport-logo/IMG_20200713_110019.png" align="left" height="150" width="150">
+  </div>
+  <div align="right" align="top">
+    <button class="but">
+      <a href="/booking" style="color:white;
+      "><h4>Pack Your Bag </h4></a>
+      </button>
+  
+      <button class="but2" id="SECOND" onmousedown="mouseDown()" onmouseup="mouseUp()" style="color: white">
+        <h3><!-- js date and time & chalk is used-->
+        <script>
+          const myDate = new Date();
+          document.write(myDate.getDate() + "/" + (myDate.getMonth() + 1) + "/" + myDate.getFullYear());
+    
+          function mouseDown() {
+            document.getElementById("SECOND").style.color = "green";
+          }
+    
+          function mouseUp() {
+            document.getElementById("SECOND").style.color = "yellow";
+          }
+        </script>
+        <!--done js  -->
+      </h4></button>
+  </div>
+  <br><br>
+  <br><br>
+  <div>
+    <hr size="5" height="5" color="#FFCC00">
+    </hr>
+    <ul class="ul">
+      <li id="li"><a href="/">Home</a></li>
+      <li id="li"><a href="/mountain">Mountain</a></li>
+      <li id="li"><a href="/adventure">Adventure</a></li>
+      <li id="li"><a href="/Beaches">Beaches</a></li>
+      <li id="li"><a href="/pilgrimage">Pilgrimage</a></li>
+    </ul>
+  </div>

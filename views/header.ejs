@@ -96,6 +96,7 @@
       opacity: 1;
       right: 0;
     }
+    
 
     .ul {
       list-style-type: none;
@@ -265,31 +266,26 @@
     <img src="./HatchfulExport-logo/IMG_20200713_110019.png" align="left" height="150" width="150">
   </div>
   <div align="right" align="top">
-    <button class="but">
+    <button class="but" >
       <a href="/booking" style="color:white;
       "><h4>Pack Your Bag </h4></a>
       </button>
       <!--done js  -->
-      <button class="but2" id="SECOND" onmousedown="mouseDown()" onmouseup="mouseUp()" onmouseover="mhover()" style="color: white">
-        <h3>
+      <button class="but2"  onmouseover="mouseovera()"; style="color: white">
+        <h3 id="SECOND">
           <script>
             const myDate = new Date();
              document.write(myDate.getDate() + "/" + (myDate.getMonth() + 1) + "/" + myDate.getFullYear());
-  
-          function mouseDown() {
-          document.getElementById("SECOND").style.color = "green";
-        }
-  
-        function mouseUp() {
-          document.getElementById("SECOND").style.color = "yellow";
-        }
-
-        function mhover() {
-          document.getElementById("SECOND").replaceWith(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds());
-        }
-       </script>
+          </script>
         </h3>
       </button>
+          <script>
+            function mouseovera() {
+            document.getElementById("SECOND").replaceWith(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds());
+            }
+            
+       </script>
+    
       
     
   </div>

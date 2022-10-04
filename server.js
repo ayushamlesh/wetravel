@@ -65,16 +65,15 @@ app.post('/booking', uncodedparser, [
     check('email', "Email is not valid")
         .isEmail()
         .normalizeEmail(),
-    check('phone-number', "Phone number is not valid")
+    check('phone', "Phone number is not valid")
         .exists()
-        .isMobilePhone()
 ],
     (req, res) => {
 
         // creating a var to store error message and coming back to the registration page
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
-            console.log(chalk.bgRed(errors));
+            console.log(chalk.bgRed(JSON.stringify(errors)));
             res.render('booking.ejs', { title: 'TRY AGAIN' })
         }
         else {
@@ -83,11 +82,16 @@ app.post('/booking', uncodedparser, [
             // setting phone number as the file name
             const filename = data.phone;
             // converting the data to string format and storing it in file
-            fs.writeFileSync(filename, JSON.stringify(data));
-            console.log("Data stored");
+            fs.writeFileSync(filename + ".txt", JSON.stringify(data));
+            console.log(chalk.bgYellowBright("Data stored"));
             res.render('home.ejs', { title: 'successful' });
         }
     });
+
+app.get('/test', (req, res) => {
+    console.log(chalk.bgRed("Test accessed"));
+    res.render('piltest.ejs', { title: 'Test' });
+});
 
 // calling the server
 app.listen(port, () => {

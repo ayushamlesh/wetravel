@@ -8,12 +8,9 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 //for file system
 const fs = require("fs");
-
 //for chalk
 const chalk = require("chalk");
-
 app.set('view engine', 'ejs');
-
 // using this middleware to serve static files
 app.use(express.static('public'));
 
@@ -88,11 +85,7 @@ app.post('/booking', uncodedparser, [
         }
     });
 
-app.get('/test', (req, res) => {
-    console.log(chalk.bgRed("Test accessed"));
-    res.render('piltest.ejs', { title: 'Test' });
-});
-
+//listening to the port
 // calling the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

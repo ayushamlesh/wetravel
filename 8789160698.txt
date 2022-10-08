@@ -1,0 +1,1 @@
+{"no_travelar":"1","no_senior_citizen":"1","trip_days":"20","email":"ayushamlesh@gmail.com","area_code":"91","phone":"8789160698","destination":"Auroville Beach","insurence":"YES"}

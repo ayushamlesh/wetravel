@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //for port that we are using
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 78;
 //for reading data from body to json
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
@@ -13,7 +13,7 @@ const chalk = require("chalk");
 app.set('view engine', 'ejs');
 // using this middleware to serve static files
 app.use(express.static('public'));
-
+app.set('view engine', 'ejs');
 // using this middleware to parse data from body to json
 const uncodedparser = bodyParser.urlencoded({ extended: false });
 
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     console.log(chalk.green("Home accessed"));
     res.render('home.ejs', { title: 'Home' });
 });
-app.set('view engine', 'ejs');
+
 
 //mountain route
 app.get('/mountain', (req, res) => {

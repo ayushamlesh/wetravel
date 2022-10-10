@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //for port that we are using
-const port = process.env.PORT || 78;
+const port = process.env.PORT || 2022;
 //for reading data from body to json
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');

@@ -54,34 +54,40 @@ app.get('/booking', (req, res) => {
 //for validating we write in [] below
 app.post('/booking', uncodedparser, [
     check('no_travelar', "Cant be empty")
-        .exists(),
-    check('no_senior_citizen')
-        .exists(),
+        .exists()
+        .isLength({ min: 1 }),
+    check('no_senior_citizen', "Cant be empty")
+        .exists()
+        .isLength({ min: 1 }),
     check('trip_days', "Cant be empty")
-        .exists(),
+        .exists()
+        .isLength({ min: 1 }),
     check('email', "Email is not valid")
         .isEmail()
         .normalizeEmail(),
     check('phone', "Phone number is not valid")
         .exists()
+        .isLength({ min: 10, max: 10 })
 ],
     (req, res) => {
 
-        // creating a var to store error message and coming back to the registration page
+        /* creating a var to store error message and
+         coming back to the registration page*/
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
             console.log(chalk.bgRed(JSON.stringify(errors)));
-            res.render('booking.ejs', { title: 'TRY AGAIN' })
+            res.render('booking.ejs',
+                { title: 'TRY AGAIN', error: `${JSON.stringify(errors)}` });
         }
         else {
             //storing the data that came from the body form
             const data = (req.body);
             // setting phone number as the file name
-            const filename = data.phone;
+            const filename = data.email;
             // converting the data to string format and storing it in file
             fs.writeFileSync(filename + ".txt", JSON.stringify(data));
             console.log(chalk.bgYellowBright("Data stored"));
-            res.render('home.ejs', { title: 'successful' });
+            res.render('home.ejs', { title: 'Sucessfull' });
         }
     });
 

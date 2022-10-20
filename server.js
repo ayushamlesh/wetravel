@@ -76,8 +76,9 @@ app.post('/booking', uncodedparser, [
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
             console.log(chalk.bgRed(JSON.stringify(errors)));
-            res.render('booking.ejs',
-                { title: 'TRY AGAIN', error: `${JSON.stringify(errors)}` });
+            var aletrt = require('alert');
+            aletrt(`Please fill the form correctly`);
+            res.render('booking.ejs', { title: 'TRY AGAIN' });
         }
         else {
             //storing the data that came from the body form

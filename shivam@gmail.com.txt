@@ -1,0 +1,1 @@
+{"no_travelar":"1","no_senior_citizen":"0","trip_days":"2","email":"ayush@gmail.com","area_code":"91","phone":"1234567890","destination":"Kedarnath","insurence":"YES"}
